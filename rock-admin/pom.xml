@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.flybird.rock</groupId>
+    <artifactId>rock-admin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>rock-admin</name>
+    <description>rock-admin project for rock</description>
+
+    <parent>
+        <groupId>org.flybird.rock</groupId>
+        <artifactId>rock</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.flybird.rock</groupId>
+            <artifactId>rock-mbg</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flybird.rock</groupId>
+            <artifactId>rock-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
+        <!--redis依赖配置-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>com.spotify</groupId>-->
+                <!--<artifactId>docker-maven-plugin</artifactId>-->
+                <!--<version>${docker.maven.plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>build-image</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<imageName>rock/${project.artifactId}:${project.version}</imageName>-->
+                    <!--<dockerHost>${docker.host}</dockerHost>-->
+                    <!--<baseImage>java:8</baseImage>-->
+                    <!--<entryPoint>["java", "-jar", "-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]-->
+                    <!--</entryPoint>-->
+                    <!--<resources>-->
+                        <!--<resource>-->
+                            <!--<targetPath>/</targetPath>-->
+                            <!--<directory>${project.build.directory}</directory>-->
+                            <!--<include>${project.build.finalName}.jar</include>-->
+                        <!--</resource>-->
+                    <!--</resources>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+</project>
